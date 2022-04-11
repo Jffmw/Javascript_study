@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Eventos DOM e funções</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #area {
+      font: 20pt Arial;
+      background-color: #90ee90;
+      color: grey;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #area2 {
+      font: 20pt Arial;
+      background-color: #90ee90;
+      color: grey;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+<!--
+Eventos DOM mouse
+  - mouseenter
+  - mousemove
+  - mousedown
+  - mouseup
+  - click
+  - mouseout
+-->
+<!-- muitos outros eventos na página Event reference da MDN -->
+
+<!--
+Funções 
+  function ação(parametros){
+
+  }
+  formato padrão de uma função 
+-->
+
+<body>
+  <div id="area" onclick="clicar(a)" onmouseenter="entrar(a)" onmouseout="sair(a)">
+    <!-- chama a função "clicar()" ao clicar "onclick" e assim por diante-->
+    interaja...
+  </div>
+
+  <div id="area2">
+    interaja...
+  </div>
+
+  <script>
+    var a = window.document.getElementById("area")
+    var b = window.document.getElementById("area2")
+
+    // criamos um escutador de eventos para poder despoluir o html
+    // é um parametro do js que fica escutando a procura de eventos 
+    // function(){função(parametro)} recebe o parametro e joga dentro da função declarada para ser escutada 
+    b.addEventListener('click', function () {clicar(b)})
+    b.addEventListener('mouseenter', function () {entrar(b)})
+    b.addEventListener('mouseout', function () {sair(b)})
+
+    function clicar(x) {  // declaração da função com entrada de parametro
+      x.innerText = "clicou!"
+      x.style.background = 'red'
+    }
+    function entrar(x) {
+      x.innerText = "opa!"
+    }
+    function sair(x) {
+      x.innerText = "interaja..."
+      x.style.background = '#90ee90'
+    }
+  </script>
+</body>
+
+</html>

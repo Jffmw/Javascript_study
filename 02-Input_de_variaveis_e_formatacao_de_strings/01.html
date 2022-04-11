@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>aprendendo js</title>
+  <style>
+    body {
+      background-color: #add7e6;
+      color: white;
+      font: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>olá, mundo</h1>
+  <p>já me livrei da maldição</p>
+  <!--
+    # declaração de variáveis em JS
+    Para declarar uma variável em js é necessário
+      - declarar a variável com "var",
+      - dar um identificador (nome da variável)
+      - não necessita declaração de tipo
+      
+    Tipos em JS 
+      - number
+        - infinity
+        - NaN (not a number)
+      - string
+      - boolean 
+      - null
+      - undefined 
+      - object
+        - array
+      - function
+  -->
+  <script>
+    // recebe o valor da variável inserida pelo usuário
+    var nome = window.prompt("qual o seu nome?")
+
+    // concatenação de variáveis é feita com "+"
+    window.alert("falae " + nome)
+
+    // o valor defalt recebido no prompt é sempre string 
+    // para receber um número é preciso fazer a conversão Number.parseInt(n) para int e Number.parseFloat(n) para float
+    // Também é possível utilizar apenas Number para qualquer conversão
+    var n1 = Number.parseInt(window.prompt("fala um numero "))
+    var n2 = Number(window.prompt("fala outro numero "))
+    var s = n1 + n2
+
+    // para converter em string é possível usar String(n) ou n.toString()
+    window.alert("a soma e " + String(s))
+
+    // uma forma melhor de editar a strings é
+    var l = "galinha linda"
+    window.alert(`a jurema é uma ${l}`)
+    // %{} é chamado placehoder. necessita de crases `` para funcionar 
+
+    // pode-se usar alert em vez de window.alert
+    alert(`a soma de ${n1} e ${n2} é ${s}`)
+
+    /** 
+      outros metodos para string são 
+      s.length() // quantos caracteres a string tem
+      s.toUpperCase() // tudo para mauscula 
+      s.toLowerCase() // tudo para minuscula
+    **/
+    nome = window.prompt("qual seu nome mesmo? ")
+    document.write(`seu nome ${nome} tem ${nome.length} letras`) // document.write escreve o output direto na pagina em vez de uma barra pop up 
+  </script>
+</body>
+
+</html>
