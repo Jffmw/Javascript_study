@@ -1,1 +1,0 @@
-é igual em C
