@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>sistema de multas</h1>
+  Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+  <input type="button" value="verificar" onclick="calcular()">
+  <div id="res">
+
+  </div>
+  <script>
+    var res = window.document.querySelector('#res')
+    function calcular() {
+      var txtv = window.document.querySelector('#txtvel')
+      var vel = Number(txtv.value)
+      res.innerHTML = `<p>velocidade atual é de <strong>${vel} km/h</strong></p>`
+      if (vel > 60) {
+        res.innerHTML += `<p>Você está <strong>MULTADO</strong> </p>`
+        res.innerHTML += `<p>Adicione seu pais: <input name="txtpais" id="txtpais"> </p>`
+        res.innerHTML += `<input type="button" value="verificar" onclick="pais()"><br>`
+      }
+    }
+
+    function pais() {
+      var txtp = window.document.querySelector('#txtpais') // recebe o input e salva em uma variável 
+      var pais = txtp.value // recebe o valor do input que está salvo na variável anterior 
+      if (pais == "brasil") {
+        res.innerHTML += `você é brasileiro`
+      } else {
+        res.innerHTML += `você é estrangeiro paga em dolar otario`
+      }
+    }
+  </script>
+</body>
+
+</html>
